@@ -108,10 +108,10 @@ function App() {
   return (
     <Container>
      <Header><AppName>
-    <MovieImage src="/icon/movie.jpg"/>
+    <MovieImage src="./icon/movie.jpg"/>
        Movie Info App</AppName>
       <SearchBox>
-        <SearchIcon src="/icon/search.jpg"/>
+        <SearchIcon src="./icon/search.jpg"/>
         <SearchInput placeholder="Search Movie" value={searchQuery} onChange={onTextChange}/>
       </SearchBox>
       </Header>
