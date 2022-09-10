@@ -7,6 +7,8 @@ export const API_KEY="52fb11dc";
 const Container=styled.div`
 display:flex;
 flex-direction:column;
+overflow-y:hidden;
+overflow-x:hidden;
 `;
 const Header=styled.div`
 display:flex;
@@ -17,11 +19,19 @@ color:white;
 padding:10px;
 font-size:20px;
 font-weight:bold;
+@media (min-width:0px) and (max-width:280){
+  height:10%;
+  width:50%;
+ }
+
 `;
 const AppName=styled.div`
 display:flex;
 flex-direction:row;
 align-items:center;
+@media (min-width:0px) and (max-width:280px){
+  display:none;
+ }
 `;
 const MovieImage=styled.img`
  width:45px;
@@ -36,7 +46,13 @@ const SearchBox=styled.div`
  border-radius:6px;
  margin-left:20px;
  width:45%;
- align-items:center:
+ align-items:center;
+ @media (min-width:280px) and (max-width:600px){
+  width:30%;
+ }
+ @media (min-width:0px) and (max-width:280px){
+  width:180px;
+ }
 `;
 const SearchIcon=styled.img`
    width:32px;
@@ -49,6 +65,9 @@ font-weight:bold;
 border:none;
 outline:none;
 margin-left:15px;
+@media (min-width:0px) and (max-width:600px){
+  width:85%;
+ }
 `;
 const MovieList=styled.div`
 display:flex;
@@ -58,6 +77,16 @@ padding: 30px;
 padding:30px;
 justify-content:space-evenly;
 gap:24px;
+`;
+const Background=styled.img`
+
+width:50%;
+height:50%;
+@media (min-width:0px) and (max-width:500px){
+  height:100%;
+  width:100%;
+ }
+
 `;
 
 function App() {
@@ -80,7 +109,7 @@ function App() {
     <Container>
      <Header><AppName>
     <MovieImage src="/icon/movie.jpg"/>
-      React Movie App</AppName>
+       Movie Info App</AppName>
       <SearchBox>
         <SearchIcon src="/icon/search.jpg"/>
         <SearchInput placeholder="Search Movie" value={searchQuery} onChange={onTextChange}/>
@@ -89,7 +118,7 @@ function App() {
       {selected  && <MovieInfoComponent selected={selected} onMovieSelect={onMovieSelect}/>}
       <MovieList>
      {movieList?.length?movieList.map((movie,index)=> (<MovieComponent key={index}  movie={movie} onMovieSelect={onMovieSelect}/>
-     )) : "No Movie Found"}
+     )) : <Background src="./icon/popcorn1.gif" />}
       </MovieList>
     </Container>
   );
