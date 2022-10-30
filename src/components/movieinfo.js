@@ -6,7 +6,7 @@ const Container=styled.div`
 display:flex;
 flex-direction:row;
 padding:20px 30px;
-
+overflow:scroll;
 border-bottom: 1px solid lightgray;
 @media (max-width:600px){
   display:inline-block;
@@ -98,6 +98,7 @@ const MovieInfoComponent=(props)=>{
             <MovieInfo>Released:<span>{movieInfo?.Released}</span></MovieInfo>
             <MovieInfo>Runtime: <span>{movieInfo?.Runtime}</span></MovieInfo> 
             <MovieInfo>Actors: <span>{movieInfo?.Actors}</span></MovieInfo>
+            <MovieInfo>Plot: <span>{movieInfo?.Plot}</span></MovieInfo>
             
         </Info>
         <Close onClick={()=>props.onMovieSelect()}>Close</Close>

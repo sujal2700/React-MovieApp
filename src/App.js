@@ -66,7 +66,8 @@ border:none;
 outline:none;
 margin-left:15px;
 @media (min-width:0px) and (max-width:600px){
-  width:85%;
+  width:90%;
+  margin-left:0.2px;
  }
 `;
 const MovieList=styled.div`
