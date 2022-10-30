@@ -7,11 +7,11 @@ const Container=styled.div`
 display:flex;
 flex-direction:row;
 padding:20px 30px;
-overflow-x:scroll;
+overflow:scroll;
 border-bottom: 1px solid lightgray;
 @media (max-width:600px){
   display:inline-block;
-  overflow:scroll;
+  
   
 }
 `;
@@ -31,7 +31,7 @@ const MovieName=styled.div`
 const CoverImage=styled.img`
  
 height:232px;
-padding:10px;
+padding:5px;
 @media (max-width:600px){
   height:200px;
   width:260px;
@@ -41,13 +41,10 @@ const Info=styled.span`
 font-size:18px;
 font-weigth:600;
 color:black;
-margin:15px 0;
-white-space:nowrap;
-overflow:hidden;
 @media (max-width:600px){
   font-size:12px;
   font-weigth:500;
-  overflow-wrap:break-word;
+  
   
 }
 `;
@@ -55,6 +52,9 @@ const MovieInfo=styled.div`
 font-size:12px;
 font-weight:500;
 color:black;
+overflow: hidden;
+  text-transform: capitalize;
+  text-overflow: ellipsis;
 @media (max-width:600px){
   font-size:12px;
   font-weigth:500;
