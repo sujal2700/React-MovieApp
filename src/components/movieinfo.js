@@ -3,19 +3,16 @@ import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { API_KEY } from '../App';
 const Container=styled.div`
-::-webkit-scrollbar{
-  width: 2rem;
-}
-::-webkit-scrollar-track{
-  background-color: var(--black);
-}
+
 display:flex;
 flex-direction:row;
 padding:20px 30px;
-overflow:scroll;
+overflow-x:scroll;
 border-bottom: 1px solid lightgray;
 @media (max-width:600px){
   display:inline-block;
+  overflow:scroll;
+  
 }
 `;
 const MovieName=styled.div`
@@ -55,7 +52,7 @@ overflow:hidden;
 }
 `;
 const MovieInfo=styled.div`
-font-size:16px;
+font-size:12px;
 font-weight:500;
 color:black;
 @media (max-width:600px){
